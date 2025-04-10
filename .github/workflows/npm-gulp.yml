@@ -3,6 +3,8 @@ on:
   push:
     branches: [ main ]
 
+permissions:
+  contents: write  # 关键权限配置[1,2](@ref)
 jobs:
   version-publish:
     runs-on: ubuntu-latest
