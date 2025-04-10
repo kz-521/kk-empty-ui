@@ -1,9 +1,5 @@
 Component({
     properties: {
-        /**
-         * 自定义返回事件处理
-         * customBackReturn="{{true}}" bind:customBackReturn="customBackReturn"
-         */
         customBackReturn: {
             type: Boolean,
             value: false
