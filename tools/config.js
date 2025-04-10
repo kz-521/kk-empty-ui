@@ -12,7 +12,12 @@ const dev = path.join(demoDist, 'components')
 const dist = path.resolve(__dirname, '../miniprogram_dist')
 
 module.exports = {
-  entry: ['index', 'lib'],
+  entry: [
+    'imgEmpty/index', 
+    'navigation-bar/index',
+    'imgTextRightItem/index',
+    'appointment-calendar/appointment-calendar',
+  ],
 
   isDev,
   isWatch,
@@ -37,21 +42,25 @@ module.exports = {
       filename: '[name].js',
       libraryTarget: 'commonjs2',
     },
-    target: 'node',
+    target: 'web',
     externals: [nodeExternals()], // 忽略 node_modules
     module: {
       rules: [{
         test: /\.js$/i,
-        use: [{
-          loader: 'thread-loader',
-        }, {
+        use: [
+        //   {
+        //   loader: 'thread-loader',
+        // }, 
+        {
           loader: 'babel-loader',
           options: {
             cacheDirectory: true,
           },
-        }, {
-          loader: 'eslint-loader',
-        }],
+        }, 
+        // {
+        //   loader: 'eslint-loader',
+        // }
+      ],
         exclude: /node_modules/
       }, {
         test: /\.ts$/,
@@ -69,14 +78,16 @@ module.exports = {
             appendTsSuffixTo: [/\.vue$/],
             happyPackMode: true,
           },
-        }, {
-          loader: 'eslint-loader',
-        }],
+        },
+        //  {
+        //   loader: 'eslint-loader',
+        // }
+      ],
       }],
     },
     resolve: {
       modules: [src, 'node_modules'],
-      extensions: ['.js', '.json'],
+      extensions: ['.js', '.json', '.ts', '.wxs'],
     },
     plugins: [
       new webpack.DefinePlugin({}),
@@ -92,5 +103,5 @@ module.exports = {
     }
   },
 
-  copy: ['./assets', './utils.js'], // 将会复制到目标目录
+  copy: ['./assets', './images', './utils.js'], // 将会复制到目标目录
 }

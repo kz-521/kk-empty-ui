@@ -1,0 +1,123 @@
+.topbar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    /* z-index: 99999999; */
+}
+
+.back-color{
+    background: linear-gradient(to bottom,#F3F9FB,#F3F9FB,#f3f9fbe0,#f3f9fb00);
+}
+
+.status {
+    width: 100%;
+}
+
+.navbar {
+    width: 452rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.doubleNavbar{
+  width: 452rpx;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  position: relative;
+}
+.double-box{
+  /* background-color: red; */
+  width: 452rpx;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  position: relative;
+}
+.double-navbar{
+  display: inline-block;
+  width: 152rpx;
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
+  position: relative;
+}
+
+.navbar_back {
+    float: left;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 128rpx;
+}
+
+.navbar_round{
+    width: 65rpx;
+    height: 65rpx;
+    border-radius: 50rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navbar_back_none{
+    float: left;
+    width: 128rpx!important;
+    display: flex;
+    color: rgba(0, 0, 0, 0);
+}
+
+.navbar_back image {
+    width: 18rpx;
+    height: 32rpx;
+}
+
+.navbar_title {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: -1;
+}
+.double-navbar_title-a{
+  word-break: break-all;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 36rpx;
+  font-weight: 600;
+  margin-left: 70rpx;
+}
+.navbar_title-a{
+    word-break: break-all;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 36rpx;
+    font-weight: 600;
+    /* color: #fff; */
+}
+
+.bg-color{
+    position: fixed;
+    height: 180rpx;
+    left: 0;
+    top: 0;
+    width: 750rpx;
+    background: linear-gradient(to bottom,rgb(204,228,255),rgba(204, 228, 255, 0.856),#FFFFFF00);
+    z-index: -10;
+}
+.bg-color-trans{
+  position: fixed;
+  height: 180rpx;
+  left: 0;
+  top: 0;
+  width: 750rpx;
+  /* background: linear-gradient(to bottom,rgb(204,228,255),rgba(204, 228, 255, 0.856),#FFFFFF00); */
+  z-index: -10;
+}

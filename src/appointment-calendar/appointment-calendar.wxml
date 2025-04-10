@@ -1,0 +1,38 @@
+<!-- 头部 -->
+<view class="big-box">
+  <view class="title-wrap">
+    <view class="change-date">
+        <view class="prev" bind:tap="changeMonthFun" data-type="prev">
+          <l-icon name="left" size="32" color="#333"></l-icon>
+        </view>
+        <view class="year-mouth">
+            {{year}}年 {{month}}月
+        </view>
+        <view clstyle="next" bind:tap="changeMonthFun" data-type="next">
+          <l-icon name="right" size="32" color="#333"></l-icon>
+        </view>
+    </view>
+    <view class="week">
+        <text wx:for="{{weeksArr}}" wx:key="*this">{{item}}</text>
+    </view>
+</view>
+<!-- 日期 -->
+<view class="date-wrap">
+    <!-- 上个月日期 -->
+    <view wx:for="{{lastMonthDays}}" wx:key="*this" class="mouth-date last-mouth">
+        <text class="day-text">{{item.date}}</text>
+    </view>
+    <!-- 当月日期 -->
+    <view class="mouth-date current-mouth" wx:for="{{nowMonthDays}}" wx:key="index">
+       <view catch:tap="selectDate" data-index="{{index}}" data-item="{{item}}" data-date="{{item.time}}" class="day-box {{item.isNowMonthDay== true ? 'active':''}}">
+        <text class="day-text {{item.color?'color':''}}">{{item.date}}</text>
+       </view>
+    </view>
+    <!-- 下个月日期 -->
+    <view class="mouth-date next-mouth" wx:for="{{nextMonthDays}}" wx:key="index">
+      <view catch:tap="selectDate" data-index="{{index}}" data-item="{{item}}" data-date="{{item.time}}" class="day-box {{item.isNowMonthDay== true ? 'active':''}}">
+        <text  class="day-text {{item.color?'color':''}}">{{item.date}}</text>
+      </view>
+    </view>
+</view>
+</view>

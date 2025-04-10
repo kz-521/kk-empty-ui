@@ -1,0 +1,22 @@
+<view class="explore-box flexfdcjcfsaic" style="background-color: rgb(233, 244, 255);">
+<view class="explore-content-last">
+<block wx:for="{{list}}" wx:key="index">
+  <view class="test-content-box" data-item="{{item}}" data-id="{{item.id}}" data-title="{{title}}" data-article_type="{{item.article_type}}" data-resource_type="{{item.resource_type}}"  bindtap="toDetail">
+    <image class="fun-explore-content-img" src="{{item.cover}}" mode=""/>
+    <!-- <image class="fun-explore-content-img" src="{{item.cover}}" mode=""/> -->
+    <view class="explore-content-center">
+      <view class="three-line-over" style="color: #333;font-size: 20rpx;">{{item.title}}</view>
+      <view style="color: #787c83;font-size: 16rpx;">{{item.nubmer}}</view>
+    </view>
+    <!-- 按钮 -->
+    <!-- <view class="flexa">
+      <button class="explore-content-button" catch:tap="openMBTI">去测试</button>
+    </view> -->
+    <!-- 右箭头 -->
+    <view>
+      <l-icon name="right" size='20' color='#000' l-class="my-icon"/>
+    </view>
+  </view>
+</block>
+</view>
+</view>

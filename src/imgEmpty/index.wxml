@@ -1,0 +1,4 @@
+<view wx:if="{{show}}" class="no-data-box">
+  <image src="../images/empty.png" mode="" class="no-data-box-img"/>
+  <text class="no-data-box-tip">{{tip}}</text>
+</view>

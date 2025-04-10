@@ -1,0 +1,21 @@
+<view class="topbar {{backColor?'back-color':''}}" style="height:{{statusHeight+navHeight}}px;z-index: {{maskIndex}}; background: linear-gradient(to bottom,{{fadeColor}},{{fadeColor}},{{fadeColor}}e0,{{fadeColor}}00);" hidden='{{false}}'>
+
+<view wx:if="{{notBgcolor}}" class="bg-color-trans" style="background:{{background}}"/>
+<view wx:else class="bg-color" style="background:{{background}}"/>
+
+<view class='status' style="height:{{statusHeight}}px"></view>
+
+<view class="navbar_back" bindtap="backClick" style="height:{{navHeight}}px" wx:if="{{backArrow}}">
+    <view class="navbar_round">
+        <image src="../images/arrow-back.png"></image>
+    </view>
+</view>
+<view wx:else class="navbar_back_none">none</view>
+
+  <view class="{{doubleTitleShow ? 'doubleNavbar' : 'navbar'}}" style="height:{{navHeight}}px">
+    <view wx:if="{{doubleTitleShow}}" class="navbar_title-a" style="margin-right: 35rpx;font-weight:{{activeTitle == 2 ? '600'  : '400'}};font-size:{{activeTitle == 2 ? '40rpx'  : '34rpx'}};color:{{activeTitle == 2 ? '#333'  : '#666'}};" catchtap="doubleTitleTap">{{doubleTitle}}</view>
+    <view class="navbar_title-a" style="font-weight:{{activeTitle == 1 ? '600'  : '400'}};font-size:{{activeTitle == 1 ? '34rpx'  : '34rpx'}};color:{{activeTitle == 1 ? '#333'  : '#666'}};" catchtap="titleTap">{{title}}</view>
+  </view>
+</view>
+
+

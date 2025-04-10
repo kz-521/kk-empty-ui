@@ -1,0 +1,109 @@
+/* components/xx-calendar/xx-calendar.wxss */
+/* 头部样式start */
+.big-box{
+    box-sizing: border-box;
+    /* background-color: red; */
+    width: 670rpx;
+    border: 1px solid rgb(216, 216, 216);
+     padding:30rpx 0 0 0; 
+    /* margin: 0 20rpx; */
+    /* box-shadow:inset -15px 0px  10px -15px rgb(136, 136, 136); */
+    font-size: 32rpx;
+    color: #333;
+    border-radius: 20rpx;
+  }
+  .title-wrap{
+    padding: 20rpx 20rpx;
+    border-bottom: 1px solid #D4DBDC;
+  }
+  .change-date{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .change-date image{
+    width: 50rpx;
+    height: 50rpx;
+    transform: scale(1.5);
+    display: flex;
+  }
+  .year-mouth{
+    margin: 0 150rpx;
+  }
+  .week{
+    display: flex;
+    justify-content: space-between;
+    font-size: 24rpx;
+    margin-top: 30rpx;
+    color: #1F1F1F;
+  }
+  .week text{
+    flex: 1;
+    text-align: center;
+  }
+  /* 头部样式end */
+  /* 日期区域样式start */
+  .date-wrap{
+    padding: 20rpx;
+    height: 340rpx;
+    display: flex;
+    /* justify-content: flex-start; */
+    flex-wrap: wrap;
+  }
+  .mouth-date{
+    display: flex;
+    font-size: 24rpx;
+    flex-direction: column;
+    align-items: center;
+    width: calc(100% / 7);
+    /* border-bottom: 1rpx solid rgb(229, 234, 235); */
+    padding-top: 10rpx;
+  }
+  .last-mouth text,.next-mouth text{
+    opacity: 0;
+  }
+  .mouth-date .day{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #1F1F1F;
+  
+  }
+  .mouth-date  .day-nongli{
+    font-size: 18rpx;
+    color: #888888;
+    margin-bottom: 6rpx;
+  }
+  .mouth-date .color{
+    color: #8096F0;
+  }
+  .mouth-date  .day-dot{
+    width: 8rpx;
+    height: 8rpx;
+    border-radius: 50%;
+    background-color: #8096F0;
+  }
+  .mouth-date .day-box{
+    /* border-radius: 10rpx; */
+    width: 80rpx;
+    height: 100%;
+    /* padding-top: 6rpx; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .mouth-date .active{
+    background-color: rgb(0, 119, 250);
+    border-radius: 5rpx;
+  }
+  .mouth-date .active text{
+    color: #fff;
+  }
+  .mouth-date .active .day-text{
+    font-weight: 600;
+    line-height: 23rpx;
+  }
+  .not-dot{
+    width: 8rpx;
+    height: 8rpx;
+  }
