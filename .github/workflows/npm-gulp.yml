@@ -23,7 +23,7 @@ jobs:
 
       # 步骤 3：安装依赖
       - name: Install dependencies
-        run: npm ci
+        run: npm install
 
       # 步骤 4：自动更新版本号
       - name: Bump version
