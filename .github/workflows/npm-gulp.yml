@@ -1,0 +1,45 @@
+name: Auto Version Bump & Publish
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  version-publish:
+    runs-on: ubuntu-latest
+    steps:
+      # 步骤 1：检出代码
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # 获取完整提交历史（用于版本号更新）
+
+      # 步骤 2：设置 Node.js 环境
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 20
+          registry-url: https://registry.npmjs.org
+          cache: 'npm'
+
+      # 步骤 3：安装依赖
+      - name: Install dependencies
+        run: npm ci
+
+      # 步骤 4：自动更新版本号
+      - name: Bump version
+        run: |
+          npm version patch -m "[ci] 自动更新版本号至 %s [skip ci]"
+          git push origin main
+          git push --tags
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      # 步骤 5：构建项目（根据项目需要可选）
+      - name: Build project
+        run: npm run build  # 如果 package.json 中有 build 脚本
+
+      # 步骤 6：发布到 npm
+      - name: Publish to npm
+        run: npm publish
+        env:
+          NODE_AUTH_TOKEN: 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
