@@ -19,7 +19,6 @@ module.exports = {
     'appointment-calendar/appointment-calendar',
     'timePicker/timePicker',
   ],
-
   isDev,
   isWatch,
   srcPath: src, // 源目录
