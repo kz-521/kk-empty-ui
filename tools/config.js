@@ -13,10 +13,11 @@ const dist = path.resolve(__dirname, '../miniprogram_dist')
 
 module.exports = {
   entry: [
-    'imgEmpty/index', 
+    'imgEmpty/index',
     'navigation-bar/index',
     'imgTextRightItem/index',
     'appointment-calendar/appointment-calendar',
+    'timePicker/timePicker',
   ],
 
   isDev,
@@ -48,19 +49,19 @@ module.exports = {
       rules: [{
         test: /\.js$/i,
         use: [
-        //   {
-        //   loader: 'thread-loader',
-        // }, 
-        {
-          loader: 'babel-loader',
-          options: {
-            cacheDirectory: true,
+          //   {
+          //   loader: 'thread-loader',
+          // }, 
+          {
+            loader: 'babel-loader',
+            options: {
+              cacheDirectory: true,
+            },
           },
-        }, 
-        // {
-        //   loader: 'eslint-loader',
-        // }
-      ],
+          // {
+          //   loader: 'eslint-loader',
+          // }
+        ],
         exclude: /node_modules/
       }, {
         test: /\.ts$/,
@@ -79,10 +80,10 @@ module.exports = {
             happyPackMode: true,
           },
         },
-        //  {
-        //   loader: 'eslint-loader',
-        // }
-      ],
+          //  {
+          //   loader: 'eslint-loader',
+          // }
+        ],
       }],
     },
     resolve: {
@@ -91,7 +92,7 @@ module.exports = {
     },
     plugins: [
       new webpack.DefinePlugin({}),
-      new webpack.optimize.LimitChunkCountPlugin({maxChunks: 1}),
+      new webpack.optimize.LimitChunkCountPlugin({ maxChunks: 1 }),
     ],
     optimization: {
       minimize: false,
